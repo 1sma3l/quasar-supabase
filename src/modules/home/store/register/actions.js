@@ -94,7 +94,6 @@ export const saveUser = async ({ commit }, user) => {
 
 export const editUser = async ({ commit }, user) => {
   try {
-    debugger;
     const { id, name, rol, telefono, activo } = user;
     const auth = getAuth();
     const db = getFirestore();

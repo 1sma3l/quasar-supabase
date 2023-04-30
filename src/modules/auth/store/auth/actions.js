@@ -2,7 +2,6 @@ import { supabase } from "src/api/supabaseClient";
 
 export const signInUser = async ({ commit }, dataForm) => {
   try {
-    debugger;
     const { email, password } = dataForm;
     const { data, error } = await supabase.auth.signInWithPassword({
       email: email,
@@ -12,9 +11,10 @@ export const signInUser = async ({ commit }, dataForm) => {
     if (session != null) {
       let dataUser = {};
       const { id } = user;
-      const { access_token } = session;
+      const { access_token, refresh_token } = session;
       let idUser = id;
       dataUser.accessToken = access_token;
+      dataUser.refresh_token = refresh_token;
       const { data } = await supabase
         .from("usuarios")
         .select("*")
