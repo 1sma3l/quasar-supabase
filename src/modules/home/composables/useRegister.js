@@ -13,7 +13,7 @@ const useRegister = () => {
     $q.loading.show({
       message: "Procesando información, Espere un momento por favor...",
     });
-
+    debugger;
     const { roles } = LocalStorage.getItem("dataUser");
     listRoles.value = roles;
 

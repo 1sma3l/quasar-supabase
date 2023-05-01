@@ -29,7 +29,14 @@ export const checkAuthentication = async ({ commit }) => {
 
 export const checkDataInit = async ({ commit }) => {
   try {
-    const { displayName } = LocalStorage.getItem("dataUser");
+    let refresh_token = LocalStorage.getItem("refresh_token");
+    const { data } = await supabase.auth.refreshSession({
+      refresh_token,
+    });
+    const { user } = data;
+    let resp = await supabase.from("usuarios").select("*").eq("uuid", user.id);
+    let infoData = resp.data;
+    let displayName = infoData[0].name;
     commit("setDataInit", { displayName }); //Llamo la mutacion
     return { success: true };
   } catch (Ex) {

@@ -152,7 +152,7 @@
             />
             <!-- buttons example -->
             <q-card-actions align="right">
-              <q-btn color="secondary" style="width: 90px" v-close-popup=""
+              <q-btn color="secondary" style="width: 90px" v-close-popup
                 >Cancelar</q-btn
               >
               <q-btn
@@ -172,7 +172,7 @@
 <script>
 const columns = [
   {
-    name: "id",
+    name: "uuid",
     label: "Identificador unico",
     align: "left",
     field: (row) => row.id,
@@ -187,13 +187,13 @@ const columns = [
     sortable: true,
   },
   { name: "email", label: "Correo", field: "email", align: "left" },
-  { name: "rol", label: "Rol", field: "rol", align: "center" },
+  { name: "descripcion", label: "Rol", field: "descripcion", align: "center" },
   { name: "creado", label: "Creado por", field: "creado", align: "center" },
   {
-    name: "fecha_creado",
+    name: "fecha_create",
     label: "Fecha creación",
     align: "left",
-    field: (row) => row.fecha_creado,
+    field: (row) => row.fecha_create,
   },
   {
     name: "modificado",
@@ -202,26 +202,26 @@ const columns = [
     align: "center",
   },
   {
-    name: "fecha_modificado",
+    name: "fecha_modif",
     label: "Fecha de modificación",
     align: "left",
-    field: (row) => row.fecha_modificado,
+    field: (row) => row.fecha_modif,
   },
-  { name: "telefono", label: "Telefono", field: "telefono", align: "center" },
-  { name: "activo", label: "Estatus", field: "activo" },
+  { name: "tel", label: "Telefono", field: "tel", align: "center" },
+  { name: "status", label: "Estatus", field: "status" },
   { name: "actions", label: "Acciones", field: "actions", align: "center" },
 ];
 
 const visibleColumns = [
   "name",
   "email",
-  "rol",
+  "descripcion",
   "creado",
-  "fecha_creado",
+  "fecha_create",
   "modificado",
-  "fecha_modificado",
-  "telefono",
-  "activo",
+  "fecha_modif",
+  "tel",
+  "sstatus",
   "actions",
 ];
 
